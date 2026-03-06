@@ -77,9 +77,53 @@
 		<div class="hidden items-center gap-4 lg:flex">
 			<a
 				href="tel:+78001234567"
-				class="text-sm font-medium tracking-wide text-surface-300 transition-colors hover:text-accent-500"
+				class="group flex items-center gap-2 rounded-lg border border-surface-600/50 bg-surface-800/40 px-4 py-2 text-sm font-medium tracking-wide text-surface-200 backdrop-blur-sm transition-all duration-300 hover:border-accent-500/50 hover:bg-surface-800/60 hover:text-white"
 			>
-				8 (800) 123-45-67
+				<svg
+					viewBox="0 0 24 24"
+					class="size-4 fill-none stroke-current stroke-2 transition-transform duration-300 group-hover:scale-110"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path
+						d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+					/>
+				</svg>
+				8 (915) 400-00-20
+			</a>
+			<!-- Compare icon -->
+			<a
+				href="/compare"
+				aria-label="Сравнение"
+				class="group flex size-9 items-center justify-center rounded-lg border border-surface-600 bg-surface-800/60 text-surface-300 transition-all duration-300 hover:border-sky-500/40 hover:bg-sky-500/5 hover:text-sky-400"
+			>
+				<svg
+					viewBox="0 0 24 24"
+					class="size-4 fill-none stroke-current stroke-2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<rect x="3" y="3" width="7" height="18" rx="1" />
+					<rect x="14" y="3" width="7" height="18" rx="1" />
+					<path d="M8 7h8M8 12h8M8 17h8" stroke-linecap="round" />
+				</svg>
+			</a>
+			<!-- Favorites icon -->
+			<a
+				href="/favorites"
+				aria-label="Избранное"
+				class="group flex size-9 items-center justify-center rounded-lg border border-surface-600 bg-surface-800/60 text-surface-300 transition-all duration-300 hover:border-rose-500/40 hover:bg-rose-500/5 hover:text-rose-400"
+			>
+				<svg
+					viewBox="0 0 24 24"
+					class="size-4 fill-none stroke-current stroke-2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path
+						d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+					/>
+				</svg>
 			</a>
 		</div>
 
@@ -121,7 +165,34 @@
 					{link.label}
 				</a>
 			{/each}
-			<a href="tel:+78001234567" class="mt-4 text-lg font-medium text-accent-500">
+			<a
+				href="/compare"
+				onclick={toggleMenu}
+				class="font-display text-3xl font-bold tracking-wide text-surface-200 transition-colors hover:text-sky-400"
+			>
+				⬚ Сравнение
+			</a>
+			<a
+				href="/favorites"
+				onclick={toggleMenu}
+				class="font-display text-3xl font-bold tracking-wide text-surface-200 transition-colors hover:text-rose-400"
+			>
+				♡ Избранное
+			</a>
+			<a
+				href="tel:+78001234567"
+				class="mt-4 flex items-center gap-3 rounded-xl border border-surface-700/50 bg-black/20 px-6 py-3 text-lg font-medium text-surface-100 backdrop-blur-xl transition-all hover:bg-black/30 hover:text-accent-400"
+			>
+				<svg
+					viewBox="0 0 24 24"
+					class="size-5 fill-none stroke-accent-500 stroke-2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path
+						d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+					/>
+				</svg>
 				8 (800) 123-45-67
 			</a>
 		</div>

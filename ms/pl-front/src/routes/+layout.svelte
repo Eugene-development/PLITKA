@@ -1,6 +1,5 @@
 <script>
 	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
@@ -8,8 +7,7 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
-	<title>PLITKA — Премиальная керамическая плитка</title>
+	<title>PLITKA — Керамическая плитка для вашего интерьера</title>
 </svelte:head>
 
 <div class="flex min-h-screen flex-col">

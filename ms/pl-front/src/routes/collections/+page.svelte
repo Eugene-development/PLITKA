@@ -19,7 +19,7 @@
 			country: 'Италия',
 			countryFlag: '🇮🇹',
 			image: '/images/tile-marble.png',
-			tag: 'Премиум',
+			tag: 'Люкс',
 			tagColor: 'bg-violet-600',
 			href: '/collections/calacatta-oro'
 		},
@@ -69,7 +69,7 @@
 			country: 'Испания',
 			countryFlag: '🇪🇸',
 			image: '/images/tile-marble.png',
-			tag: 'Премиум',
+			tag: 'Люкс',
 			tagColor: 'bg-violet-600',
 			href: '/collections/marble-sky'
 		},

@@ -16,7 +16,7 @@
 		},
 		{
 			title: 'Керамогранит',
-			description: 'Премиальная отделка нового поколения',
+			description: 'Элегантная отделка нового поколения',
 			image: '/images/tile-geometric.png',
 			count: '420+ вариантов',
 			href: '/catalog/porcelain'
@@ -43,7 +43,7 @@
 			brand: 'Atlas Concorde',
 			price: 'от 4 150 ₽/м²',
 			image: '/images/tile-marble.png',
-			tag: 'Премиум'
+			tag: 'Люкс'
 		},
 		{
 			name: 'Urban Craft',
@@ -113,7 +113,7 @@
 	<div class="absolute inset-0">
 		<img
 			src="/images/hero-bathroom.png"
-			alt="Премиальный интерьер с керамической плиткой"
+			alt="Стильный интерьер с керамической плиткой"
 			class="size-full object-cover"
 		/>
 		<div
@@ -157,7 +157,7 @@
 
 			<!-- Subtitle -->
 			<p class="mt-6 max-w-2xl text-lg leading-relaxed text-surface-300">
-				Премиальная керамическая плитка от ведущих мировых производителей. Воплотите свои
+				Качественная керамическая плитка от ведущих мировых производителей. Воплотите свои
 				дизайнерские идеи в реальность.
 			</p>
 
