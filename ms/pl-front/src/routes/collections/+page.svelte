@@ -1,6 +1,6 @@
 <script>
 	let searchQuery = $state('');
-	let activeBrand = $state('all');
+	let selectedBrands = $state(new Set());
 
 	const collections = [
 		{
@@ -125,13 +125,23 @@
 		}
 	];
 
-	const brands = ['all', ...new Set(collections.map((c) => c.brand))];
+	const brands = [...new Set(collections.map((c) => c.brand))];
+
+	function toggleBrand(brand) {
+		const next = new Set(selectedBrands);
+		if (next.has(brand)) {
+			next.delete(brand);
+		} else {
+			next.add(brand);
+		}
+		selectedBrands = next;
+	}
 
 	const filteredCollections = $derived(
 		collections.filter((c) => {
 			const q = searchQuery.toLowerCase();
 			const matchesSearch = q === '' || c.name.toLowerCase().includes(q);
-			const matchesBrand = activeBrand === 'all' || c.brand === activeBrand;
+			const matchesBrand = selectedBrands.size === 0 || selectedBrands.has(c.brand);
 			return matchesSearch && matchesBrand;
 		})
 	);
@@ -234,15 +244,26 @@
 
 			<!-- Brand filter pills -->
 			<div class="flex flex-wrap gap-2">
+				<!-- Reset button -->
+				<button
+					onclick={() => (selectedBrands = new Set())}
+					class="rounded-full border px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-200 {selectedBrands.size ===
+					0
+						? 'border-accent-500 bg-accent-500/10 text-accent-500'
+						: 'border-surface-600 bg-surface-800/40 text-surface-300 hover:border-surface-500 hover:text-surface-200'}"
+				>
+					Все
+				</button>
 				{#each brands as brand (brand)}
 					<button
-						onclick={() => (activeBrand = brand)}
-						class="rounded-full border px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-200 {activeBrand ===
-						brand
+						onclick={() => toggleBrand(brand)}
+						class="rounded-full border px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-200 {selectedBrands.has(
+							brand
+						)
 							? 'border-accent-500 bg-accent-500/10 text-accent-500'
 							: 'border-surface-600 bg-surface-800/40 text-surface-300 hover:border-surface-500 hover:text-surface-200'}"
 					>
-						{brand === 'all' ? 'Все' : brand}
+						{brand}
 					</button>
 				{/each}
 			</div>
@@ -344,7 +365,7 @@
 				<button
 					onclick={() => {
 						searchQuery = '';
-						activeBrand = 'all';
+						selectedBrands = new Set();
 					}}
 					class="mt-6 rounded-xl border border-surface-600 px-6 py-3 text-sm font-medium text-surface-300 transition-all hover:border-surface-400 hover:text-white"
 				>

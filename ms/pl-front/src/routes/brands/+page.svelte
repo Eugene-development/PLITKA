@@ -1,6 +1,6 @@
 <script>
 	let searchQuery = $state('');
-	let activeCountry = $state('all');
+	let selectedBrands = $state(new Set());
 
 	const brands = [
 		{
@@ -125,14 +125,17 @@
 		}
 	];
 
-	const countries = [
-		{ code: 'all', label: 'Все страны' },
-		{ code: 'ru', label: 'Россия' },
-		{ code: 'it', label: 'Италия' },
-		{ code: 'pl', label: 'Польша' },
-		{ code: 'es', label: 'Испания' },
-		{ code: 'cz', label: 'Чехия' }
-	];
+	const brandNames = brands.map((b) => b.name);
+
+	function toggleBrand(name) {
+		const next = new Set(selectedBrands);
+		if (next.has(name)) {
+			next.delete(name);
+		} else {
+			next.add(name);
+		}
+		selectedBrands = next;
+	}
 
 	const filteredBrands = $derived(
 		brands.filter((b) => {
@@ -142,8 +145,8 @@
 				b.name.toLowerCase().includes(q) ||
 				b.country.toLowerCase().includes(q) ||
 				b.tags.some((t) => t.toLowerCase().includes(q));
-			const matchesCountry = activeCountry === 'all' || b.countryCode === activeCountry;
-			return matchesSearch && matchesCountry;
+			const matchesBrand = selectedBrands.size === 0 || selectedBrands.has(b.name);
+			return matchesSearch && matchesBrand;
 		})
 	);
 </script>
@@ -216,17 +219,28 @@
 				/>
 			</div>
 
-			<!-- Country filter pills -->
+			<!-- Brand filter pills -->
 			<div class="flex flex-wrap gap-2">
-				{#each countries as c (c.code)}
+				<!-- Reset -->
+				<button
+					onclick={() => (selectedBrands = new Set())}
+					class="rounded-full border px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-200 {selectedBrands.size ===
+					0
+						? 'border-accent-500 bg-accent-500/10 text-accent-500'
+						: 'border-surface-600 bg-surface-800/40 text-surface-300 hover:border-surface-500 hover:text-surface-200'}"
+				>
+					Все
+				</button>
+				{#each brandNames as name (name)}
 					<button
-						onclick={() => (activeCountry = c.code)}
-						class="rounded-full border px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-200 {activeCountry ===
-						c.code
+						onclick={() => toggleBrand(name)}
+						class="rounded-full border px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-200 {selectedBrands.has(
+							name
+						)
 							? 'border-accent-500 bg-accent-500/10 text-accent-500'
 							: 'border-surface-600 bg-surface-800/40 text-surface-300 hover:border-surface-500 hover:text-surface-200'}"
 					>
-						{c.label}
+						{name}
 					</button>
 				{/each}
 			</div>
@@ -328,7 +342,7 @@
 				<button
 					onclick={() => {
 						searchQuery = '';
-						activeCountry = 'all';
+						selectedBrands = new Set();
 					}}
 					class="mt-6 rounded-xl border border-surface-600 px-6 py-3 text-sm font-medium text-surface-300 transition-all hover:border-surface-400 hover:text-white"
 				>
