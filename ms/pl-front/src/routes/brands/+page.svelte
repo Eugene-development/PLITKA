@@ -284,7 +284,7 @@
 						</p>
 
 						<!-- Tags -->
-						<div class="mt-5 flex flex-wrap gap-1.5">
+						<!-- <div class="mt-5 flex flex-wrap gap-1.5">
 							{#each brand.tags as tag (tag)}
 								<span
 									class="rounded-full bg-accent-500/8 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-accent-500/80 uppercase"
@@ -292,7 +292,7 @@
 									{tag}
 								</span>
 							{/each}
-						</div>
+						</div> -->
 
 						<!-- Footer link row -->
 						<div class="mt-6 flex items-center justify-between border-t border-surface-700/50 pt-5">

@@ -29,7 +29,7 @@
 				{ label: 'Контакты', href: '/contacts' },
 				{ label: 'Дизайнерам', href: '/designers' },
 				{ label: 'Доставка', href: '/delivery' },
-				{ label: 'Блог', href: '/blog' }
+				{ label: 'Вакансии', href: '/vacancies' }
 			]
 		}
 	];

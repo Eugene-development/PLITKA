@@ -3,9 +3,9 @@
 	let mobileMenuOpen = $state(false);
 
 	const navLinks = [
-		{ label: 'Каталог', href: '/catalog' },
 		{ label: 'Коллекции', href: '/collections' },
 		{ label: 'Бренды', href: '/brands' },
+		{ label: 'Услуги', href: '/services' },
 		{ label: 'О нас', href: '/about' },
 		{ label: 'Контакты', href: '/contacts' }
 	];
@@ -81,12 +81,6 @@
 			>
 				8 (800) 123-45-67
 			</a>
-			<!-- <a
-				href="/catalog"
-				class="rounded-lg border border-accent-500 bg-accent-500/10 px-6 py-2.5 text-sm font-semibold tracking-wide text-accent-500 transition-all duration-300 hover:bg-accent-500 hover:text-surface-900 hover:shadow-lg hover:shadow-accent-500/25"
-			>
-				Каталог
-			</a> -->
 		</div>
 
 		<!-- Mobile burger -->
