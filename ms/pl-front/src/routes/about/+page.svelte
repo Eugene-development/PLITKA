@@ -141,7 +141,7 @@
 			{#each stats as stat (stat.label)}
 				<div>
 					<div class="font-display text-2xl font-bold text-accent-500">{stat.value}</div>
-					<div class="mt-1 text-xs tracking-wide text-surface-400">{stat.label}</div>
+					<div class="mt-1 text-xs tracking-wide text-surface-300">{stat.label}</div>
 				</div>
 			{/each}
 		</div>
@@ -160,14 +160,14 @@
 				<h2
 					class="mt-4 font-display text-4xl leading-tight font-bold tracking-wide text-white lg:text-5xl"
 				>
-					Красота в каждом <span class="text-surface-400">квадратном метре</span>
+					Красота в каждом <span class="text-surface-300">квадратном метре</span>
 				</h2>
 				<p class="mt-6 text-lg leading-relaxed text-surface-300">
 					PLITKA появилась из простой идеи: каждый человек заслуживает красивого дома, а красивый
 					дом начинается с правильных материалов. Мы убрали лишних посредников, наладили прямые
 					поставки и собрали команду настоящих экспертов.
 				</p>
-				<p class="mt-4 leading-relaxed text-surface-400">
+				<p class="mt-4 leading-relaxed text-surface-300">
 					Сегодня мы работаем с частными клиентами, дизайнерами и застройщиками по всей России. Наш
 					принцип неизменен: предлагать лучшее качество по честной цене и помогать на каждом этапе —
 					от выбора до укладки.
@@ -194,7 +194,7 @@
 						</div>
 						<div>
 							<div class="text-sm font-semibold text-white">Александр Петров</div>
-							<div class="text-xs text-surface-400">Основатель компании PLITKA</div>
+							<div class="text-xs text-surface-300">Основатель компании PLITKA</div>
 						</div>
 					</div>
 				</div>
@@ -226,7 +226,7 @@
 				>
 					<div class="mb-5 text-4xl">{val.icon}</div>
 					<h3 class="text-lg font-bold text-white">{val.title}</h3>
-					<p class="mt-3 text-sm leading-relaxed text-surface-400">{val.desc}</p>
+					<p class="mt-3 text-sm leading-relaxed text-surface-300">{val.desc}</p>
 				</div>
 			{/each}
 		</div>
@@ -281,7 +281,7 @@
 							>
 								<span class="font-display text-3xl font-bold text-accent-500">{item.year}</span>
 								<h3 class="mt-2 text-base font-bold text-white">{item.title}</h3>
-								<p class="mt-2 text-sm leading-relaxed text-surface-400">{item.desc}</p>
+								<p class="mt-2 text-sm leading-relaxed text-surface-300">{item.desc}</p>
 							</div>
 						</div>
 
@@ -302,7 +302,7 @@
 			<h2 class="mt-3 font-display text-4xl font-bold tracking-wide text-white lg:text-5xl">
 				Команда PLITKA
 			</h2>
-			<p class="mx-auto mt-4 max-w-xl text-surface-400">
+			<p class="mx-auto mt-4 max-w-xl text-surface-300">
 				За каждым заказом стоит команда профессионалов, которые искренне любят своё дело.
 			</p>
 		</div>
@@ -325,7 +325,7 @@
 					<div class="mt-1 text-xs font-semibold tracking-wider text-accent-500 uppercase">
 						{member.role}
 					</div>
-					<p class="mt-4 text-sm leading-relaxed text-surface-400">{member.bio}</p>
+					<p class="mt-4 text-sm leading-relaxed text-surface-300">{member.bio}</p>
 				</div>
 			{/each}
 		</div>
@@ -342,7 +342,7 @@
 			<h2 class="mt-3 font-display text-4xl font-bold tracking-wide text-white lg:text-5xl">
 				Бренды, которым мы доверяем
 			</h2>
-			<p class="mx-auto mt-4 max-w-xl text-surface-400">
+			<p class="mx-auto mt-4 max-w-xl text-surface-300">
 				Прямые контракты с ведущими производителями — гарантия оригинальности и лучших цен.
 			</p>
 		</div>
@@ -350,7 +350,7 @@
 		<div class="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
 			{#each brands as brand (brand)}
 				<div
-					class="flex h-16 items-center justify-center rounded-xl border border-surface-700/50 bg-surface-800/30 px-4 text-xs font-semibold tracking-wide text-surface-400 transition-all duration-300 hover:border-accent-500/20 hover:text-surface-200"
+					class="flex h-16 items-center justify-center rounded-xl border border-surface-700/50 bg-surface-800/30 px-4 text-xs font-semibold tracking-wide text-surface-300 transition-all duration-300 hover:border-accent-500/20 hover:text-surface-200"
 				>
 					{brand}
 				</div>

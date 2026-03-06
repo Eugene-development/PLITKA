@@ -212,7 +212,7 @@
 					type="text"
 					bind:value={searchQuery}
 					placeholder="Поиск по бренду или стране..."
-					class="w-full rounded-xl border border-surface-600 bg-surface-800/50 py-3.5 pr-5 pl-11 text-sm text-white placeholder-surface-500 transition-all duration-300 outline-none focus:border-accent-500/60 focus:bg-surface-800 focus:ring-2 focus:ring-accent-500/15"
+					class="w-full rounded-xl border border-surface-600 bg-surface-800/50 py-3.5 pr-5 pl-11 text-sm text-white placeholder-surface-300 transition-all duration-300 outline-none focus:border-accent-500/60 focus:bg-surface-800 focus:ring-2 focus:ring-accent-500/15"
 				/>
 			</div>
 
@@ -224,7 +224,7 @@
 						class="rounded-full border px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-200 {activeCountry ===
 						c.code
 							? 'border-accent-500 bg-accent-500/10 text-accent-500'
-							: 'border-surface-600 bg-surface-800/40 text-surface-400 hover:border-surface-500 hover:text-surface-200'}"
+							: 'border-surface-600 bg-surface-800/40 text-surface-300 hover:border-surface-500 hover:text-surface-200'}"
 					>
 						{c.label}
 					</button>
@@ -233,7 +233,7 @@
 		</div>
 
 		<!-- Results count -->
-		<p class="mb-8 text-sm text-surface-500">
+		<p class="mb-8 text-sm text-surface-300">
 			{#if filteredBrands.length === brands.length}
 				Все {brands.length} брендов
 			{:else}
@@ -253,7 +253,7 @@
 						<div class="mb-5 flex items-start justify-between">
 							<span class="text-2xl">{brand.flag}</span>
 							<span
-								class="rounded-lg border border-surface-600/50 bg-surface-700/30 px-2.5 py-1 text-[10px] font-semibold tracking-wider text-surface-500 uppercase"
+								class="rounded-lg border border-surface-600/50 bg-surface-700/30 px-2.5 py-1 text-[10px] font-semibold tracking-wider text-surface-300 uppercase"
 							>
 								с {brand.founded}
 							</span>
@@ -275,11 +275,11 @@
 									clip-rule="evenodd"
 								/>
 							</svg> -->
-							<span class="text-xs text-surface-400">{brand.country}</span>
+							<span class="text-xs text-surface-300">{brand.country}</span>
 						</div>
 
 						<!-- Description -->
-						<p class="mt-4 flex-1 text-sm leading-relaxed text-surface-400">
+						<p class="mt-4 flex-1 text-sm leading-relaxed text-surface-300">
 							{brand.description}
 						</p>
 
@@ -297,7 +297,7 @@
 						<!-- Footer link row -->
 						<div class="mt-6 flex items-center justify-between border-t border-surface-700/50 pt-5">
 							<span
-								class="text-xs font-medium text-surface-500 transition-colors group-hover:text-surface-400"
+								class="text-xs font-medium text-surface-300 transition-colors group-hover:text-surface-300"
 							>
 								Смотреть коллекции
 							</span>
@@ -324,7 +324,7 @@
 			<div class="flex flex-col items-center py-24 text-center">
 				<div class="mb-5 text-5xl">🔍</div>
 				<h3 class="text-xl font-bold text-white">Ничего не найдено</h3>
-				<p class="mt-2 text-surface-400">Попробуйте изменить запрос или сбросить фильтры</p>
+				<p class="mt-2 text-surface-300">Попробуйте изменить запрос или сбросить фильтры</p>
 				<button
 					onclick={() => {
 						searchQuery = '';

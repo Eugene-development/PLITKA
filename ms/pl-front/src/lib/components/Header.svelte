@@ -51,7 +51,7 @@
 					PLITKA
 				</span>
 				<span
-					class="block text-[10px] font-medium tracking-[0.3em] text-surface-400 uppercase transition-colors group-hover:text-surface-300"
+					class="block text-[10px] font-medium tracking-[0.3em] text-surface-300 uppercase transition-colors group-hover:text-surface-300"
 				>
 					Керамика & Дизайн
 				</span>

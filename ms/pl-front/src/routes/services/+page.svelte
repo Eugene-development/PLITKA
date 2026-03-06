@@ -69,14 +69,14 @@
 				>
 					Доставка
 				</h2>
-				<p class="mt-4 flex-1 text-base leading-relaxed text-surface-400">
+				<p class="mt-4 flex-1 text-base leading-relaxed text-surface-300">
 					Быстрая и бережная доставка плитки, сантехники и отделочных материалов прямо на объект.
 					Работаем по городу и области, обеспечиваем сохранность груза.
 				</p>
 
 				<ul class="mt-6 space-y-2.5">
 					{#each ['Доставка в день заказа', 'Аккуратная погрузка и разгрузка', 'Отслеживание заказа в реальном времени'] as item}
-						<li class="flex items-center gap-3 text-sm text-surface-400">
+						<li class="flex items-center gap-3 text-sm text-surface-300">
 							<span
 								class="flex size-5 shrink-0 items-center justify-center rounded-full bg-accent-500/15"
 							>
@@ -128,14 +128,14 @@
 				>
 					Плиточник
 				</h2>
-				<p class="mt-4 flex-1 text-base leading-relaxed text-surface-400">
+				<p class="mt-4 flex-1 text-base leading-relaxed text-surface-300">
 					Профессиональная укладка керамической плитки, керамогранита и мозаики. Опытные мастера с
 					портфолио готовых объектов — ванные, кухни, прихожие, фасады.
 				</p>
 
 				<ul class="mt-6 space-y-2.5">
 					{#each ['Укладка любого формата и сложности', 'Точная подрезка и стыковка', 'Гарантия на работы 2 года'] as item}
-						<li class="flex items-center gap-3 text-sm text-surface-400">
+						<li class="flex items-center gap-3 text-sm text-surface-300">
 							<span
 								class="flex size-5 shrink-0 items-center justify-center rounded-full bg-accent-500/15"
 							>
@@ -187,14 +187,14 @@
 				>
 					Сантехник
 				</h2>
-				<p class="mt-4 flex-1 text-base leading-relaxed text-surface-400">
+				<p class="mt-4 flex-1 text-base leading-relaxed text-surface-300">
 					Монтаж и подключение сантехники: ванны, душевые кабины, унитазы, раковины, смесители.
 					Качественные работы с соблюдением всех норм и стандартов.
 				</p>
 
 				<ul class="mt-6 space-y-2.5">
 					{#each ['Монтаж под ключ', 'Замена старых трубопроводов', 'Выезд в день обращения'] as item}
-						<li class="flex items-center gap-3 text-sm text-surface-400">
+						<li class="flex items-center gap-3 text-sm text-surface-300">
 							<span
 								class="flex size-5 shrink-0 items-center justify-center rounded-full bg-accent-500/15"
 							>
@@ -246,14 +246,14 @@
 				>
 					Дизайн интерьера
 				</h2>
-				<p class="mt-4 flex-1 text-base leading-relaxed text-surface-400">
+				<p class="mt-4 flex-1 text-base leading-relaxed text-surface-300">
 					Разработка авторских дизайн-проектов: концепция, планировочное решение, подбор отделочных
 					материалов, 3D-визуализация. Превращаем ваши идеи в законченный образ.
 				</p>
 
 				<ul class="mt-6 space-y-2.5">
 					{#each ['3D-визуализация каждой комнаты', 'Подбор материалов под бюджет', 'Авторский надзор за ремонтом'] as item}
-						<li class="flex items-center gap-3 text-sm text-surface-400">
+						<li class="flex items-center gap-3 text-sm text-surface-300">
 							<span
 								class="flex size-5 shrink-0 items-center justify-center rounded-full bg-accent-500/15"
 							>
@@ -308,14 +308,14 @@
 				>
 					Подбор мебели
 				</h2>
-				<p class="mt-4 flex-1 text-base leading-relaxed text-surface-400">
+				<p class="mt-4 flex-1 text-base leading-relaxed text-surface-300">
 					Помогаем выбрать мебель, которая гармонично впишется в интерьер: ванные комнаты, кухни,
 					гостиные. Работаем с ведущими производителями по выгодным ценам.
 				</p>
 
 				<ul class="mt-6 space-y-2.5">
 					{#each ['Подбор под дизайн-проект', 'Каталог сотен коллекций', 'Доставка и сборка включены'] as item}
-						<li class="flex items-center gap-3 text-sm text-surface-400">
+						<li class="flex items-center gap-3 text-sm text-surface-300">
 							<span
 								class="flex size-5 shrink-0 items-center justify-center rounded-full bg-accent-500/15"
 							>

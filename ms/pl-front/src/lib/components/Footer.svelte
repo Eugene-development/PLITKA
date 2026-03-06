@@ -71,12 +71,12 @@
 						<span class="font-display text-xl font-bold tracking-wider text-surface-50 uppercase">
 							PLITKA
 						</span>
-						<span class="block text-[10px] font-medium tracking-[0.3em] text-surface-400 uppercase">
+						<span class="block text-[10px] font-medium tracking-[0.3em] text-surface-300 uppercase">
 							Керамика & Дизайн
 						</span>
 					</div>
 				</a>
-				<p class="mt-6 max-w-sm text-sm leading-relaxed text-surface-400">
+				<p class="mt-6 max-w-sm text-sm leading-relaxed text-surface-300">
 					Премиальная керамическая плитка для вашего интерьера. Широкий ассортимент коллекций от
 					ведущих мировых и российских производителей.
 				</p>
@@ -104,7 +104,7 @@
 							<li>
 								<a
 									href={link.href}
-									class="text-sm text-surface-400 transition-colors duration-200 hover:text-accent-500"
+									class="text-sm text-surface-300 transition-colors duration-200 hover:text-accent-500"
 								>
 									{link.label}
 								</a>
@@ -119,17 +119,17 @@
 		<div
 			class="mt-16 flex flex-col items-center justify-between gap-4 border-t border-surface-700/50 pt-8 md:flex-row"
 		>
-			<p class="text-xs text-surface-500">
+			<p class="text-xs text-surface-300">
 				© {currentYear} PLITKA. Все права защищены.
 			</p>
 			<div class="flex gap-6">
 				<a
 					href="/privacy"
-					class="text-xs text-surface-500 transition-colors hover:text-surface-300"
+					class="text-xs text-surface-300 transition-colors hover:text-surface-300"
 				>
 					Политика конфиденциальности
 				</a>
-				<a href="/terms" class="text-xs text-surface-500 transition-colors hover:text-surface-300">
+				<a href="/terms" class="text-xs text-surface-300 transition-colors hover:text-surface-300">
 					Пользовательское соглашение
 				</a>
 			</div>

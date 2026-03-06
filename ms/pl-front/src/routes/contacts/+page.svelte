@@ -103,7 +103,7 @@
 				Партнёрские салоны
 			</span>
 			<h2 class="mt-3 font-display text-4xl font-bold tracking-wide text-white lg:text-5xl">
-				Посмотрите образцы <span class="text-surface-400">вживую</span>
+				Посмотрите образцы <span class="text-surface-300">вживую</span>
 			</h2>
 			<p class="mt-4 max-w-2xl text-surface-300">
 				В наших партнёрских салонах представлены сотни коллекций — вы можете оценить фактуру, цвет и
@@ -165,7 +165,7 @@
 									/>
 								</svg>
 							</span>
-							<span class="text-sm text-surface-400">{salon.address}</span>
+							<span class="text-sm text-surface-300">{salon.address}</span>
 						</div>
 						<!-- Hours -->
 						<div class="flex items-center gap-2">
@@ -178,7 +178,7 @@
 									/>
 								</svg>
 							</span>
-							<span class="text-sm text-surface-400">{salon.hours}</span>
+							<span class="text-sm text-surface-300">{salon.hours}</span>
 						</div>
 					</div>
 					<a
@@ -217,7 +217,7 @@
 				<h2
 					class="mt-4 font-display text-4xl leading-tight font-bold tracking-wide text-white lg:text-5xl"
 				>
-					Образцы привезём <span class="text-surface-400">к вам</span>
+					Образцы привезём <span class="text-surface-300">к вам</span>
 				</h2>
 				<p class="mt-6 text-lg leading-relaxed text-surface-300">
 					Не можете приехать в салон? Наш курьер доставит образцы понравившихся коллекций прямо к
@@ -263,7 +263,7 @@
 						<span class="font-display text-3xl font-bold text-accent-500/30">{item.step}</span>
 						<div>
 							<h4 class="font-semibold text-white">{item.title}</h4>
-							<p class="mt-1 text-sm leading-relaxed text-surface-400">{item.desc}</p>
+							<p class="mt-1 text-sm leading-relaxed text-surface-300">{item.desc}</p>
 						</div>
 					</div>
 				{/each}
@@ -336,7 +336,7 @@
 						</p>
 						<button
 							onclick={resetForm}
-							class="mt-8 text-sm font-medium text-surface-400 transition-colors hover:text-surface-200"
+							class="mt-8 text-sm font-medium text-surface-300 transition-colors hover:text-surface-200"
 						>
 							← Вернуться
 						</button>
@@ -355,7 +355,7 @@
 								bind:value={name}
 								required
 								placeholder="Как вас зовут?"
-								class="w-full rounded-xl border border-surface-600 bg-surface-700/50 px-5 py-4 text-sm text-white placeholder-surface-500 transition-all duration-300 outline-none focus:border-accent-500/60 focus:bg-surface-700 focus:ring-2 focus:ring-accent-500/15"
+								class="w-full rounded-xl border border-surface-600 bg-surface-700/50 px-5 py-4 text-sm text-white placeholder-surface-300 transition-all duration-300 outline-none focus:border-accent-500/60 focus:bg-surface-700 focus:ring-2 focus:ring-accent-500/15"
 							/>
 						</div>
 
@@ -370,16 +370,16 @@
 								bind:value={phone}
 								required
 								placeholder="+7 (___) ___-__-__"
-								class="w-full rounded-xl border border-surface-600 bg-surface-700/50 px-5 py-4 text-sm text-white placeholder-surface-500 transition-all duration-300 outline-none focus:border-accent-500/60 focus:bg-surface-700 focus:ring-2 focus:ring-accent-500/15"
+								class="w-full rounded-xl border border-surface-600 bg-surface-700/50 px-5 py-4 text-sm text-white placeholder-surface-300 transition-all duration-300 outline-none focus:border-accent-500/60 focus:bg-surface-700 focus:ring-2 focus:ring-accent-500/15"
 							/>
 						</div>
 
 						<!-- Privacy note -->
-						<p class="text-xs leading-relaxed text-surface-500">
+						<p class="text-xs leading-relaxed text-surface-300">
 							Нажимая кнопку, вы соглашаетесь с
 							<a
 								href="/privacy"
-								class="text-surface-400 underline underline-offset-2 transition-colors hover:text-accent-500"
+								class="text-surface-300 underline underline-offset-2 transition-colors hover:text-accent-500"
 								>политикой конфиденциальности</a
 							>. Ваши данные не передаются третьим лицам.
 						</p>
@@ -412,7 +412,7 @@
 			<!-- Trust badges -->
 			<div class="mt-8 flex flex-wrap items-center justify-center gap-6">
 				{#each [{ icon: '🔒', text: 'Данные защищены' }, { icon: '🚫', text: 'Без спама' }, { icon: '⚡', text: 'Промокод за 5 минут' }] as badge (badge.text)}
-					<div class="flex items-center gap-2 text-sm text-surface-400">
+					<div class="flex items-center gap-2 text-sm text-surface-300">
 						<span>{badge.icon}</span>
 						<span>{badge.text}</span>
 					</div>

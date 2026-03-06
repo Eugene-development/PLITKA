@@ -192,7 +192,7 @@
 				{#each stats as stat (stat.label)}
 					<div>
 						<div class="font-display text-2xl font-bold text-accent-500">{stat.value}</div>
-						<div class="mt-1 text-xs tracking-wide text-surface-400">{stat.label}</div>
+						<div class="mt-1 text-xs tracking-wide text-surface-300">{stat.label}</div>
 					</div>
 				{/each}
 			</div>
@@ -308,7 +308,7 @@
 						</div>
 						<div>
 							<div class="text-sm font-bold text-white">3D-визуализация</div>
-							<div class="text-xs text-surface-400">Бесплатно для заказов</div>
+							<div class="text-xs text-surface-300">Бесплатно для заказов</div>
 						</div>
 					</div>
 				</div>
@@ -323,7 +323,7 @@
 					class="mt-4 font-display text-4xl leading-tight font-bold tracking-wide text-white lg:text-5xl"
 				>
 					Визуализируйте пространство
-					<span class="text-surface-400">до покупки</span>
+					<span class="text-surface-300">до покупки</span>
 				</h2>
 				<p class="mt-6 text-lg leading-relaxed text-surface-300">
 					Наши специалисты создадут 3D-раскладку плитки в вашем интерьере. Увидьте результат до
@@ -365,7 +365,7 @@
 			<h2 class="mt-3 font-display text-4xl font-bold tracking-wide text-white lg:text-5xl">
 				Бестселлеры коллекций
 			</h2>
-			<p class="mx-auto mt-4 max-w-2xl text-surface-400">
+			<p class="mx-auto mt-4 max-w-2xl text-surface-300">
 				Самые востребованные коллекции керамической плитки, выбранные нашими клиентами и
 				профессиональными дизайнерами
 			</p>
@@ -399,7 +399,7 @@
 
 					<!-- Content -->
 					<div class="p-5">
-						<div class="text-[11px] font-medium tracking-wider text-surface-400 uppercase">
+						<div class="text-[11px] font-medium tracking-wider text-surface-300 uppercase">
 							{item.brand}
 						</div>
 						<h3
@@ -450,7 +450,7 @@
 				>
 					<div class="mb-5 text-4xl">{adv.icon}</div>
 					<h3 class="text-lg font-bold text-white">{adv.title}</h3>
-					<p class="mt-2 text-sm leading-relaxed text-surface-400">
+					<p class="mt-2 text-sm leading-relaxed text-surface-300">
 						{adv.desc}
 					</p>
 				</div>
