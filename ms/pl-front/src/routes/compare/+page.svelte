@@ -57,7 +57,7 @@
 			size: '45×45 см',
 			thickness: '8.5 мм',
 			finish: 'Матовая',
-			material: 'Керамика',
+			material: 'Клинкер',
 			waterAbsorption: '≤ 3%',
 			slipResistance: 'R11',
 			frostResistant: false,
@@ -78,7 +78,7 @@
 			size: '25×75 см',
 			thickness: '9 мм',
 			finish: 'Структурная',
-			material: 'Керамика',
+			material: 'Натуральный камень',
 			waterAbsorption: '≤ 1%',
 			slipResistance: 'R9',
 			frostResistant: false,
@@ -99,7 +99,7 @@
 			size: '20×60 см',
 			thickness: '8 мм',
 			finish: 'Глянцевая',
-			material: 'Керамика',
+			material: 'Керамогранит',
 			waterAbsorption: '≤ 1%',
 			slipResistance: 'R9',
 			frostResistant: false,
@@ -231,7 +231,7 @@
 	<title>Сравнение коллекций — PLITKA</title>
 	<meta
 		name="description"
-		content="Сравните характеристики керамической плитки PLITKA: размер, материал, поверхность, водопоглощение, морозостойкость и гарантию — всё в одной таблице."
+		content="Сравните характеристики плитки PLITKA: размер, материал, поверхность, водопоглощение, морозостойкость и гарантию — всё в одной таблице."
 	/>
 </svelte:head>
 

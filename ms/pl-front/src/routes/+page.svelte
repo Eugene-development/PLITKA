@@ -113,7 +113,7 @@
 	<div class="absolute inset-0">
 		<img
 			src="/images/hero-bathroom.png"
-			alt="Стильный интерьер с керамической плиткой"
+			alt="Стильный интерьер с плиткой"
 			class="size-full object-cover"
 		/>
 		<div
@@ -149,7 +149,7 @@
 				Искусство
 
 				<span class="bg-gradient-to-r from-accent-500 to-accent-300 bg-clip-text text-transparent">
-					керамики
+					плитки
 				</span>
 				<br />
 				в каждой детали
@@ -157,7 +157,7 @@
 
 			<!-- Subtitle -->
 			<p class="mt-6 max-w-2xl text-lg leading-relaxed text-surface-300">
-				Качественная керамическая плитка от ведущих мировых производителей. Воплотите свои
+				Качественная плитка из разных материалов от ведущих мировых производителей. Воплотите свои
 				дизайнерские идеи в реальность.
 			</p>
 
@@ -293,7 +293,7 @@
 				<div class="relative aspect-[4/3] overflow-hidden rounded-2xl">
 					<img
 						src="/images/tile-kitchen.png"
-						alt="Современный интерьер кухни с керамической плиткой"
+						alt="Современный интерьер кухни с плиткой"
 						class="size-full object-cover"
 					/>
 					<div class="absolute inset-0 rounded-2xl ring-1 ring-white/10 ring-inset"></div>
@@ -366,8 +366,8 @@
 				Бестселлеры коллекций
 			</h2>
 			<p class="mx-auto mt-4 max-w-2xl text-surface-300">
-				Самые востребованные коллекции керамической плитки, выбранные нашими клиентами и
-				профессиональными дизайнерами
+				Самые востребованные коллекции плитки, выбранные нашими клиентами и профессиональными
+				дизайнерами
 			</p>
 		</div>
 

@@ -122,7 +122,7 @@
 			countryFlag: '🇷🇺',
 			tag: 'Новинка',
 			description:
-				'Брутальная городская эстетика в керамике. Коллекция с текстурами лофта — бетона, металла и стали. Идеальна для современных пространств.',
+				'Брутальная городская эстетика. Коллекция с текстурами лофта — бетона, металла и стали. Идеальна для современных пространств.',
 			interiorImages: [
 				'/images/tile-terrazzo.png',
 				'/images/tile-geometric.png',
@@ -187,7 +187,7 @@
 			country: 'Россия',
 			countryFlag: '🇷🇺',
 			tag: 'Коллекция',
-			description: 'Откройте мир керамической плитки этой замечательной коллекции.',
+			description: 'Откройте мир плитки этой замечательной коллекции.',
 			interiorImages: [
 				'/images/hero-bathroom.png',
 				'/images/tile-marble.png',
@@ -265,18 +265,50 @@
 	});
 
 	// ── Wishlist / Compare / Cart state ──────────────────────────────────────
-	let wishlist = $state(new SvelteSet());
-	let compareList = $state(new SvelteSet());
-	let cart = $state(new SvelteSet());
+	import { browser } from '$app/environment';
+
+	let wishlist = $state(
+		new SvelteSet(browser ? JSON.parse(localStorage.getItem('plitka_favorites') || '[]') : [])
+	);
+	let compareList = $state(
+		new SvelteSet(browser ? JSON.parse(localStorage.getItem('plitka_compare') || '[]') : [])
+	);
+	let cart = $state(
+		new SvelteSet(
+			browser ? JSON.parse(localStorage.getItem('plitka_cart') || '[]').map((item) => item.id) : []
+		)
+	);
 
 	function toggleWishlist(name) {
 		wishlist.has(name) ? wishlist.delete(name) : wishlist.add(name);
+		if (browser) {
+			localStorage.setItem('plitka_favorites', JSON.stringify(Array.from(wishlist)));
+		}
 	}
 	function toggleCompare(name) {
 		compareList.has(name) ? compareList.delete(name) : compareList.add(name);
+		if (browser) {
+			localStorage.setItem('plitka_compare', JSON.stringify(Array.from(compareList)));
+		}
 	}
 	function toggleCart(name) {
-		cart.has(name) ? cart.delete(name) : cart.add(name);
+		if (cart.has(name)) {
+			cart.delete(name);
+			if (browser) {
+				const current = JSON.parse(localStorage.getItem('plitka_cart') || '[]');
+				localStorage.setItem('plitka_cart', JSON.stringify(current.filter((c) => c.id !== name)));
+			}
+		} else {
+			cart.add(name);
+			if (browser) {
+				const current = JSON.parse(localStorage.getItem('plitka_cart') || '[]');
+				// Check if already in array just in case
+				if (!current.some((c) => c.id === name)) {
+					current.push({ id: name, qty: 1 });
+					localStorage.setItem('plitka_cart', JSON.stringify(current));
+				}
+			}
+		}
 	}
 
 	function formatPrice(p) {

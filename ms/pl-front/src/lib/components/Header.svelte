@@ -1,8 +1,70 @@
 <script>
+	import { browser } from '$app/environment';
+
 	let scrolled = $state(false);
 	let mobileMenuOpen = $state(false);
 
+	let favoritesCount = $state(0);
+	let compareCount = $state(0);
+	let cartCount = $state(0);
+
+	function updateCounts() {
+		if (!browser) return;
+
+		try {
+			const f = localStorage.getItem('plitka_favorites');
+			favoritesCount = f ? JSON.parse(f).length : 0;
+		} catch (e) {
+			favoritesCount = 0;
+		}
+
+		try {
+			const c = localStorage.getItem('plitka_compare');
+			compareCount = c ? JSON.parse(c).length : 0;
+		} catch (e) {
+			compareCount = 0;
+		}
+
+		try {
+			const ca = localStorage.getItem('plitka_cart');
+			if (ca) {
+				const parsed = JSON.parse(ca);
+				cartCount = Array.isArray(parsed)
+					? parsed.reduce((sum, item) => sum + (item.qty || 1), 0)
+					: 0;
+			} else {
+				cartCount = 0;
+			}
+		} catch (e) {
+			cartCount = 0;
+		}
+	}
+
+	$effect(() => {
+		updateCounts();
+
+		if (!window._plitkaStorageWrapped) {
+			const originalSetItem = localStorage.setItem;
+			localStorage.setItem = function (key, value) {
+				originalSetItem.apply(this, arguments);
+				if (key.startsWith('plitka_')) {
+					window.dispatchEvent(new Event('plitka-storage-update'));
+				}
+			};
+			window._plitkaStorageWrapped = true;
+		}
+
+		window.addEventListener('plitka-storage-update', updateCounts);
+		window.addEventListener('storage', updateCounts);
+
+		return () => {
+			window.removeEventListener('plitka-storage-update', updateCounts);
+			window.removeEventListener('storage', updateCounts);
+		};
+	});
+
 	const navLinks = [
+		{ label: 'Материалы', href: '/materials' },
 		{ label: 'Коллекции', href: '/collections' },
 		{ label: 'Бренды', href: '/brands' },
 		{ label: 'Услуги', href: '/services' },
@@ -53,7 +115,7 @@
 				<span
 					class="block text-[10px] font-medium tracking-[0.3em] text-surface-300 uppercase transition-colors group-hover:text-surface-300"
 				>
-					Керамика & Дизайн
+					Плитка & Дизайн
 				</span>
 			</div>
 		</a>
@@ -95,8 +157,15 @@
 			<a
 				href="/compare"
 				aria-label="Сравнение"
-				class="group flex size-9 items-center justify-center rounded-lg border border-surface-600 bg-surface-800/60 text-surface-300 transition-all duration-300 hover:border-sky-500/40 hover:bg-sky-500/5 hover:text-sky-400"
+				class="group relative flex size-9 items-center justify-center rounded-lg border border-surface-600 bg-surface-800/60 text-surface-300 transition-all duration-300 hover:border-sky-500/40 hover:bg-sky-500/5 hover:text-sky-400"
 			>
+				{#if compareCount > 0}
+					<span
+						class="absolute -top-1.5 -right-1.5 flex h-4 min-w-[1rem] items-center justify-center rounded-full bg-sky-500 px-1 text-[9px] leading-none font-bold text-white shadow-sm ring-2 ring-surface-900"
+					>
+						{compareCount}
+					</span>
+				{/if}
 				<svg
 					viewBox="0 0 24 24"
 					class="size-4 fill-none stroke-current stroke-2"
@@ -112,8 +181,15 @@
 			<a
 				href="/favorites"
 				aria-label="Избранное"
-				class="group flex size-9 items-center justify-center rounded-lg border border-surface-600 bg-surface-800/60 text-surface-300 transition-all duration-300 hover:border-rose-500/40 hover:bg-rose-500/5 hover:text-rose-400"
+				class="group relative flex size-9 items-center justify-center rounded-lg border border-surface-600 bg-surface-800/60 text-surface-300 transition-all duration-300 hover:border-rose-500/40 hover:bg-rose-500/5 hover:text-rose-400"
 			>
+				{#if favoritesCount > 0}
+					<span
+						class="absolute -top-1.5 -right-1.5 flex h-4 min-w-[1rem] items-center justify-center rounded-full bg-rose-500 px-1 text-[9px] leading-none font-bold text-white shadow-sm ring-2 ring-surface-900"
+					>
+						{favoritesCount}
+					</span>
+				{/if}
 				<svg
 					viewBox="0 0 24 24"
 					class="size-4 fill-none stroke-current stroke-2"
@@ -123,6 +199,30 @@
 					<path
 						d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
 					/>
+				</svg>
+			</a>
+			<!-- Cart icon -->
+			<a
+				href="/cart"
+				aria-label="Корзина"
+				class="group relative flex size-9 items-center justify-center rounded-lg border border-surface-600 bg-surface-800/60 text-surface-300 transition-all duration-300 hover:border-accent-500/50 hover:bg-accent-500/5 hover:text-accent-400"
+			>
+				{#if cartCount > 0}
+					<span
+						class="absolute -top-1.5 -right-1.5 flex h-4 min-w-[1rem] items-center justify-center rounded-full bg-accent-500 px-1 text-[9px] leading-none font-bold text-surface-900 shadow-sm ring-2 ring-surface-900"
+					>
+						{cartCount}
+					</span>
+				{/if}
+				<svg
+					viewBox="0 0 24 24"
+					class="size-4 fill-none stroke-current stroke-2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+					<line x1="3" y1="6" x2="21" y2="6" />
+					<path d="M16 10a4 4 0 01-8 0" />
 				</svg>
 			</a>
 		</div>
@@ -165,20 +265,81 @@
 					{link.label}
 				</a>
 			{/each}
-			<a
-				href="/compare"
-				onclick={toggleMenu}
-				class="font-display text-3xl font-bold tracking-wide text-surface-200 transition-colors hover:text-sky-400"
-			>
-				⬚ Сравнение
-			</a>
-			<a
-				href="/favorites"
-				onclick={toggleMenu}
-				class="font-display text-3xl font-bold tracking-wide text-surface-200 transition-colors hover:text-rose-400"
-			>
-				♡ Избранное
-			</a>
+			<div class="flex items-center gap-4">
+				<a
+					href="/compare"
+					onclick={toggleMenu}
+					aria-label="Сравнение"
+					class="group relative flex size-12 items-center justify-center rounded-xl border border-surface-600 bg-surface-800/60 text-surface-300 transition-all duration-300 hover:border-sky-500/40 hover:bg-sky-500/10 hover:text-sky-400"
+				>
+					{#if compareCount > 0}
+						<span
+							class="absolute -top-1.5 -right-1.5 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-sky-500 px-1.5 text-[10px] leading-none font-bold text-white shadow-sm ring-2 ring-surface-900"
+						>
+							{compareCount}
+						</span>
+					{/if}
+					<svg
+						viewBox="0 0 24 24"
+						class="size-6 fill-none stroke-current stroke-2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<rect x="3" y="3" width="7" height="18" rx="1" />
+						<rect x="14" y="3" width="7" height="18" rx="1" />
+						<path d="M8 7h8M8 12h8M8 17h8" stroke-linecap="round" />
+					</svg>
+				</a>
+				<a
+					href="/favorites"
+					onclick={toggleMenu}
+					aria-label="Избранное"
+					class="group relative flex size-12 items-center justify-center rounded-xl border border-surface-600 bg-surface-800/60 text-surface-300 transition-all duration-300 hover:border-rose-500/40 hover:bg-rose-500/10 hover:text-rose-400"
+				>
+					{#if favoritesCount > 0}
+						<span
+							class="absolute -top-1.5 -right-1.5 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 text-[10px] leading-none font-bold text-white shadow-sm ring-2 ring-surface-900"
+						>
+							{favoritesCount}
+						</span>
+					{/if}
+					<svg
+						viewBox="0 0 24 24"
+						class="size-6 fill-none stroke-current stroke-2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path
+							d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+						/>
+					</svg>
+				</a>
+				<!-- Cart icon -->
+				<a
+					href="/cart"
+					onclick={toggleMenu}
+					aria-label="Корзина"
+					class="group relative flex size-12 items-center justify-center rounded-xl border border-surface-600 bg-surface-800/60 text-surface-300 transition-all duration-300 hover:border-accent-500/50 hover:bg-accent-500/10 hover:text-accent-400"
+				>
+					{#if cartCount > 0}
+						<span
+							class="absolute -top-1.5 -right-1.5 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-accent-500 px-1.5 text-[10px] leading-none font-bold text-surface-900 shadow-sm ring-2 ring-surface-900"
+						>
+							{cartCount}
+						</span>
+					{/if}
+					<svg
+						viewBox="0 0 24 24"
+						class="size-6 fill-none stroke-current stroke-2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+						<line x1="3" y1="6" x2="21" y2="6" />
+						<path d="M16 10a4 4 0 01-8 0" />
+					</svg>
+				</a>
+			</div>
 			<a
 				href="tel:+78001234567"
 				class="mt-4 flex items-center gap-3 rounded-xl border border-surface-700/50 bg-black/20 px-6 py-3 text-lg font-medium text-surface-100 backdrop-blur-xl transition-all hover:bg-black/30 hover:text-accent-400"

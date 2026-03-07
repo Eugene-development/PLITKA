@@ -72,13 +72,13 @@
 							PLITKA
 						</span>
 						<span class="block text-[10px] font-medium tracking-[0.3em] text-surface-300 uppercase">
-							Керамика & Дизайн
+							Плитка & Дизайн
 						</span>
 					</div>
 				</a>
 				<p class="mt-6 max-w-sm text-sm leading-relaxed text-surface-300">
-					Качественная керамическая плитка для вашего интерьера. Широкий ассортимент коллекций от
-					ведущих мировых и российских производителей.
+					Качественная плитка для вашего интерьера. Широкий ассортимент коллекций от ведущих мировых
+					и российских производителей.
 				</p>
 				<div class="mt-8 flex items-center gap-4">
 					{#each socials as social (social.label)}

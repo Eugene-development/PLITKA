@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>PLITKA — Керамическая плитка для вашего интерьера</title>
+	<title>PLITKA — Плитка из разных материалов для вашего интерьера</title>
 </svelte:head>
 
 <div class="flex min-h-screen flex-col">

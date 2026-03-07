@@ -151,7 +151,7 @@
 	<title>Коллекции — PLITKA</title>
 	<meta
 		name="description"
-		content="Каталог коллекций керамической плитки PLITKA: Nero Marquina, Calacatta Oro, Urban Craft и многие другие. Фильтрация по бренду и стране."
+		content="Каталог коллекций плитки PLITKA: Nero Marquina, Calacatta Oro, Urban Craft и многие другие. Фильтрация по бренду и стране."
 	/>
 </svelte:head>
 
@@ -195,7 +195,7 @@
 
 		<p class="mt-6 max-w-2xl text-lg leading-relaxed text-surface-300">
 			Откройте для себя <span class="font-semibold text-accent-500">{collections.length}+</span> уникальных
-			коллекций от ведущих мировых производителей керамической плитки.
+			коллекций от ведущих мировых производителей.
 		</p>
 
 		<!-- Quick stats -->
