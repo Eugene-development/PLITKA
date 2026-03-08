@@ -16,6 +16,6 @@ fi
 
 # Stop services
 echo "🔧 Остановка сервисов..."
-docker-compose down
+docker-compose --project-name plitka-front down
 
 echo "✅ Frontend Zov остановлен!"

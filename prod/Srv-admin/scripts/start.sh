@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# 🚀 Frontend Start Script
+# 🚀 Admin Start Script
 set -e
 
 cd "$(dirname "$0")/.."
 
-echo "🚀 Запуск Frontend (SvelteKit App)..."
+echo "🚀 Запуск Admin (SvelteKit App)..."
 echo "=================================="
 
 # Check Docker
@@ -26,17 +26,17 @@ done
 
 # Start services
 echo "🔧 Запуск сервисов..."
-docker-compose pull
-docker-compose up -d
+docker-compose --project-name plitka-admin pull
+docker-compose --project-name plitka-admin up -d
 
 echo "⏳ Ожидание готовности..."
 sleep 10
 
 # Show status
 echo "📊 Статус сервисов:"
-docker-compose ps
+docker-compose --project-name plitka-admin ps
 
-echo "✅ Frontend Zov запущен!"
-echo "🌐 App доступен на: http://localhost:4413 (или ваш домен)"
-echo "📊 Статус: docker-compose ps"
-echo "📋 Логи: docker-compose logs -f"
+echo "✅ Admin Plitka запущен!"
+echo "🌐 App доступен на: http://localhost:4142 (или ваш домен)"
+echo "📊 Статус: docker-compose --project-name plitka-admin ps"
+echo "📋 Логи: docker-compose --project-name plitka-admin logs -f"

@@ -5,7 +5,7 @@ set -e
 
 cd "$(dirname "$0")/.."
 
-echo "🛑 Остановка Admin (Zov-admin)..."
+echo "🛑 Остановка Admin (Plitka-admin)..."
 echo "===================================="
 
 # Check Docker
@@ -16,6 +16,6 @@ fi
 
 # Stop services
 echo "🔧 Остановка сервисов..."
-docker-compose down
+docker-compose --project-name plitka-admin down
 
-echo "✅ Admin Zov остановлен!"
+echo "✅ Admin Plitka остановлен!"

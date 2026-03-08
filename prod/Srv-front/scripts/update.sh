@@ -16,17 +16,17 @@ fi
 
 # Pull latest images
 echo "🔧 Загрузка новых образов..."
-docker-compose pull
+docker-compose --project-name plitka-front pull
 
 # Recreate containers
 echo "🔧 Пересоздание контейнеров..."
-docker-compose up -d --force-recreate
+docker-compose --project-name plitka-front up -d --force-recreate
 
 echo "⏳ Ожидание готовности..."
 sleep 10
 
 # Show status
 echo "📊 Статус сервисов:"
-docker-compose ps
+docker-compose --project-name plitka-front ps
 
-echo "✅ Frontend Zov обновлен!"
+echo "✅ Frontend Plitka обновлен!"

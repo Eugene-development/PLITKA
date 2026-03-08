@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# 🔄 Admin Zov Update Script
+# 🔄 Admin Plitka Update Script
 set -e
 
 cd "$(dirname "$0")/.."
 
-echo "🔄 Обновление Admin (Zov-app)..."
+echo "🔄 Обновление Admin (Plitka-admin)..."
 echo "====================================="
 
 # Check Docker
@@ -16,17 +16,17 @@ fi
 
 # Pull latest images
 echo "🔧 Загрузка новых образов..."
-docker-compose pull
+docker-compose --project-name plitka-admin pull
 
 # Recreate containers
 echo "🔧 Пересоздание контейнеров..."
-docker-compose up -d --force-recreate
+docker-compose --project-name plitka-admin up -d --force-recreate
 
 echo "⏳ Ожидание готовности..."
 sleep 10
 
 # Show status
 echo "📊 Статус сервисов:"
-docker-compose ps
+docker-compose --project-name plitka-admin ps
 
-echo "✅ Admin Zov обновлен!"
+echo "✅ Admin Plitka обновлен!"

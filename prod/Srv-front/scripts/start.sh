@@ -5,7 +5,7 @@ set -e
 
 cd "$(dirname "$0")/.."
 
-echo "🚀 Запуск Frontend (Zov-app)..."
+echo "🚀 Запуск Frontend (Plitka-app)..."
 echo "=================================="
 
 # Check Docker
@@ -26,17 +26,17 @@ done
 
 # Start services
 echo "🔧 Запуск сервисов..."
-docker-compose pull
-docker-compose up -d
+docker-compose --project-name plitka-front pull
+docker-compose --project-name plitka-front up -d
 
 echo "⏳ Ожидание готовности..."
 sleep 10
 
 # Show status
 echo "📊 Статус сервисов:"
-docker-compose ps
+docker-compose --project-name plitka-front ps
 
-echo "✅ Frontend ZOV запущен!"
-echo "🌐 App доступен на: http://localhost:4414 (или ваш домен)"
-echo "📊 Статус: docker-compose ps"
-echo "📋 Логи: docker-compose logs -f"
+echo "✅ Frontend Plitka запущен!"
+echo "🌐 App доступен на: http://localhost:4141 (или ваш домен)"
+echo "📊 Статус: docker-compose --project-name plitka-front ps"
+echo "📋 Логи: docker-compose --project-name plitka-front logs -f"
