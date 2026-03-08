@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  # SvelteKit Application
+  plitka-front-app:
+    image: larux/plitka-front:latest
+    container_name: plitka-prod-front-app
+    restart: unless-stopped
+    networks:
+      - plitka-front-network
+    environment:
+      - NODE_ENV=production
+      - PORT=9999
+    secrets:
+      - api_base_url
+      - frontend_url
+      - auth_api_url
+
+  # Nginx Proxy
+  plitka-front-nginx:
+    image: nginx:alpine
+    container_name: plitka-prod-front-nginx
+    restart: unless-stopped
+    ports:
+      - "4141:80"
+    volumes:
+      - ./nginx/front.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/ssl:/etc/ssl/certs:ro
+    networks:
+      - plitka-front-network
+    depends_on:
+      - plitka-front-app
+
+networks:
+  plitka-front-network:
+    name: plitka-front-network
+    driver: bridge
+
+secrets:
+  frontend_url:
+    file: ./secrets/frontend_url
+  api_base_url:
+    file: ./secrets/api_base_url
+  auth_api_url:
+    file: ./secrets/auth_api_url

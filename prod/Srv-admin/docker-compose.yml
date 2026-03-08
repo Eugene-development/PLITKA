@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  # SvelteKit Application
+  plitka-admin-app:
+    image: larux/plitka-admin:latest
+    container_name: plitka-prod-admin-app
+    restart: unless-stopped
+    networks:
+      - plitka-admin-network
+    environment:
+      - NODE_ENV=production
+      - PORT=9999
+    secrets:
+      - api_base_url
+      - frontend_url
+      - auth_api_url
+
+  # Nginx Proxy
+  plitka-admin-nginx:
+    image: nginx:alpine
+    container_name: plitka-prod-admin-nginx
+    restart: unless-stopped
+    ports:
+      - "4142:80"
+    volumes:
+      - ./nginx/admin.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/ssl:/etc/ssl/certs:ro
+    networks:
+      - plitka-admin-network
+    depends_on:
+      - plitka-admin-app
+
+networks:
+  plitka-admin-network:
+    name: plitka-admin-network
+    driver: bridge
+
+secrets:
+  frontend_url:
+    file: ./secrets/frontend_url
+  api_base_url:
+    file: ./secrets/api_base_url
+  auth_api_url:
+    file: ./secrets/auth_api_url

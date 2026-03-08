@@ -1,0 +1,55 @@
+version: "3.8"
+
+services:
+  # Laravel Backend Application (zov-api)
+  plitka-api-app:
+    image: larux/plitka-api:latest
+    container_name: plitka-prod-api-app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - api_storage:/var/www/storage
+      - api_cache:/var/www/bootstrap/cache
+      - api_public:/var/www/public
+    networks:
+      - api-network
+    environment:
+      - APP_ENV=production
+      - APP_DEBUG=false
+      - LOG_CHANNEL=stack
+      - LOG_LEVEL=error
+    secrets:
+      - jwt_secret
+
+  # Backend Nginx Proxy (z-api)
+  plitka-api-nginx:
+    image: nginx:alpine
+    container_name: plitka-prod-api-nginx
+    restart: unless-stopped
+    ports:
+      - "7143:80"
+    volumes:
+      - ./nginx/backend.conf:/etc/nginx/conf.d/default.conf:ro
+      - api_storage:/var/www/storage:ro
+      - api_public:/var/www/public:ro
+    networks:
+      - api-network
+    depends_on:
+      - plitka-api-app
+
+networks:
+  api-network:
+    name: plitka-api-network
+    driver: bridge
+
+volumes:
+  api_storage:
+    name: plitka-api-storage
+  api_cache:
+    name: plitka-api-cache
+  api_public:
+    name: plitka-api-public
+
+secrets:
+  jwt_secret:
+    file: ./secrets/jwt_secret
