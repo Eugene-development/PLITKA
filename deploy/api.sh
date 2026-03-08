@@ -2,7 +2,7 @@
 set -e
 
 # Путь к Plitka-api бэкенду
-API_DIR="../ms/plitka-api"
+API_DIR="../ms/pl-api"
 IMAGE_NAME="larux/plitka-api:latest"
 
 cd "$API_DIR"

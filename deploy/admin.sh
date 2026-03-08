@@ -2,7 +2,7 @@
 set -e
 
 # Путь к Plitka-admin бэкенду
-API_DIR="../ms/plitka-admin"
+API_DIR="../ms/pl-admin"
 IMAGE_NAME="larux/plitka-admin:latest"
 
 cd "$API_DIR"

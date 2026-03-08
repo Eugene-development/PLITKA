@@ -2,7 +2,7 @@
 set -e
 
 # Путь к Plitka-auth бэкенду
-AUTH_DIR="../ms/plitka-auth"
+AUTH_DIR="../ms/pl-auth"
 IMAGE_NAME="larux/plitka-auth:latest"
     
 cd "$AUTH_DIR"
