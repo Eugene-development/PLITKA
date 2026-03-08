@@ -68,7 +68,7 @@
 		{ label: 'Коллекции', href: '/collections' },
 		{ label: 'Бренды', href: '/brands' },
 		{ label: 'Услуги', href: '/services' },
-		{ label: 'О нас', href: '/about' },
+		// { label: 'О нас', href: '/about' },
 		{ label: 'Контакты', href: '/contacts' }
 	];
 
@@ -115,7 +115,7 @@
 				<span
 					class="block text-[10px] font-medium tracking-[0.3em] text-surface-300 uppercase transition-colors group-hover:text-surface-300"
 				>
-					Плитка & Дизайн
+					Интерьер & Дизайн
 				</span>
 			</div>
 		</a>

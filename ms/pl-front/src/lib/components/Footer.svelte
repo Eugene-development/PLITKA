@@ -25,7 +25,7 @@
 		{
 			title: 'Компания',
 			links: [
-				{ label: 'О нас', href: '/about' },
+				// { label: 'О нас', href: '/about' },
 				{ label: 'Контакты', href: '/contacts' },
 				{ label: 'Дизайнерам', href: '/designers' },
 				{ label: 'Доставка', href: '/delivery' },
