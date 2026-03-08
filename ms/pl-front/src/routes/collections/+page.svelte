@@ -148,7 +148,7 @@
 </script>
 
 <svelte:head>
-	<title>Коллекции — PLITKA</title>
+	<title>PLITKA — Коллекции</title>
 	<meta
 		name="description"
 		content="Каталог коллекций плитки PLITKA: Nero Marquina, Calacatta Oro, Urban Craft и многие другие. Фильтрация по бренду и стране."

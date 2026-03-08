@@ -117,7 +117,7 @@
 </script>
 
 <svelte:head>
-	<title>Избранное — PLITKA</title>
+	<title>PLITKA — Избранное</title>
 	<meta
 		name="description"
 		content="Ваши избранные коллекции плитки PLITKA. Сохраняйте понравившиеся модели и возвращайтесь к ним в любое время."

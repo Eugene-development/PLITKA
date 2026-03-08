@@ -317,7 +317,7 @@
 </script>
 
 <svelte:head>
-	<title>{collection.name} — Коллекции — PLITKA</title>
+	<title>PLITKA — {collection.name} — Коллекции</title>
 	<meta
 		name="description"
 		content="Коллекция {collection.name} от {collection.brand}. Узнайте размеры, цены и закажите плитку в PLITKA."

@@ -178,7 +178,7 @@
 </script>
 
 <svelte:head>
-	<title>Корзина — PLITKA</title>
+	<title>PLITKA — Корзина</title>
 	<meta
 		name="description"
 		content="Ваша корзина PLITKA. Добавляйте понравившуюся плитку и оформляйте заказ в несколько кликов."

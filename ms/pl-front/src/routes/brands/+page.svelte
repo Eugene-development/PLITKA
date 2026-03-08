@@ -153,7 +153,7 @@
 </script>
 
 <svelte:head>
-	<title>Бренды — PLITKA</title>
+	<title>PLITKA — Бренды</title>
 	<meta
 		name="description"
 		content="Каталог брендов плитки в PLITKA: Kerama Marazzi, Atlas Concorde, Italon, Porcelanosa и другие ведущие производители."

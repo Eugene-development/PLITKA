@@ -117,7 +117,7 @@
 </script>
 
 <svelte:head>
-	<title>Вакансии — PLITKA</title>
+	<title>PLITKA — Вакансии</title>
 	<meta
 		name="description"
 		content="Работайте вместе с PLITKA — открытые вакансии: Плиточник, Менеджер по продажам, Дизайнер мебели, Куратор проектов."

@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Услуги — PLITKA</title>
+	<title>PLITKA — Услуги</title>
 	<meta
 		name="description"
 		content="Полный спектр услуг PLITKA: доставка, укладка плитки, сантехнические работы, дизайн интерьера и подбор мебели для вашего проекта."

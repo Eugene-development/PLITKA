@@ -51,7 +51,7 @@
 </script>
 
 <svelte:head>
-	<title>Контакты — PLITKA</title>
+	<title>PLITKA — Контакты</title>
 	<meta
 		name="description"
 		content="Свяжитесь с PLITKA: адреса партнёрских салонов, выезд курьера с образцами, получите промокод на скидку 10%."

@@ -89,7 +89,7 @@
 </script>
 
 <svelte:head>
-	<title>О нас — PLITKA</title>
+	<title>PLITKA — О нас</title>
 	<meta
 		name="description"
 		content="История компании PLITKA — 15 лет экспертизы в области плитки, прямые поставки от лучших мировых производителей, команда профессионалов."

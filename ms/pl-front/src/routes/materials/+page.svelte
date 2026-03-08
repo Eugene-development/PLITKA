@@ -71,7 +71,7 @@
 </script>
 
 <svelte:head>
-	<title>Материалы — PLITKA</title>
+	<title>PLITKA — Материалы</title>
 	<meta
 		name="description"
 		content="Каталог отделочных материалов PLITKA: керамическая плитка, керамогранит, мозаика, натуральный камень, декоры и уличные покрытия."
