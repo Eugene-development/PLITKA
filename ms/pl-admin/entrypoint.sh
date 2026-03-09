@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# SvelteKit Plitka Frontend Entrypoint Script
+# SvelteKit Plitka Admin Entrypoint Script
 # Reads Docker secrets and sets PUBLIC environment variables
 
-echo "🚀 SvelteKit Plitka Frontend starting with domain secrets resolution..."
+echo "🚀 SvelteKit Plitka Admin starting with domain secrets resolution..."
 
 # Read secret values for configuration
 FRONTEND_URL_VALUE=""
@@ -49,8 +49,8 @@ echo "  FRONTEND_URL: ${FINAL_FRONTEND_URL}"
 export AUTH_BACKEND_URL="${FINAL_AUTH_API_URL}/api"
 echo "  AUTH_BACKEND_URL: ${AUTH_BACKEND_URL}"
 
-# Start SvelteKit Plitka Frontend application
-echo "🌐 Starting SvelteKit Plitka Frontend application..."
+# Start SvelteKit Plitka Admin application
+echo "🌐 Starting SvelteKit Plitka Admin application..."
 echo "📋 Command to execute: $@"
 
 # Execute the command with proper signal handling

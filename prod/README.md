@@ -17,7 +17,7 @@ auth-7144
 
 ```bash
 export COPYFILE_DISABLE=1
-tar -czf Srv-front.tar.gz Srv-front
+tar -czf Srv-admin.tar.gz Srv-admin
 ```
 
 ## 2. Передайте архив или папку на сервер
@@ -25,17 +25,17 @@ tar -czf Srv-front.tar.gz Srv-front
 ### Вариант: Через SCP (рекомендуется)
 
 ```bash
-scp Srv-front.tar.gz admin@51.250.120.100:/home/admin/Project/PLITKA/
+scp Srv-admin.tar.gz admin@51.250.120.100:/home/admin/Project/PLITKA/
 ```
 
 ## 3. Распакуйте архив на сервере (если передавали архив)
 
 ```bash
-sudo tar -xzf Srv-front.tar.gz
+sudo tar -xzf Srv-admin.tar.gz
 ```
 
 ## 4. Удалите архив
 
 ```bash
-sudo rm Srv-front.tar.gz
+sudo rm Srv-admin.tar.gz
 ```

@@ -167,7 +167,7 @@
 					href="/catalog"
 					class="group inline-flex items-center gap-3 rounded-xl bg-accent-500 px-8 py-4 text-sm font-bold tracking-wide text-surface-900 uppercase transition-all duration-300 hover:bg-accent-400 hover:shadow-2xl hover:shadow-accent-500/30"
 				>
-					Смотреть каталог
+					Промокод на скидку 10%
 					<svg
 						viewBox="0 0 20 20"
 						class="size-4 fill-current transition-transform duration-300 group-hover:translate-x-1"
